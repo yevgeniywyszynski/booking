@@ -1,0 +1,52 @@
+.navbar {
+  height: 50px;
+  background-color: #0a3b95;
+  display: flex;
+  justify-content: center;
+  .navContainer {
+    width: 100%;
+    max-width: 1024px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .homeLink {
+      text-decoration: none;
+      color: #fff;
+      cursor: pointer;
+      font-size: 24px;
+    }
+    .logo {
+      font-weight: 700;
+    }
+    .navLoginBtnWrapper {
+      display: flex;
+      gap: 20px;
+      .navBtn {
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        color: #0a3b95;
+      }
+    }
+  }
+}
+
+/*MEDIA*/
+
+@media (max-width: 900px) {
+  .navContainer {
+    padding: 20px 70px;
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    height: max-content;
+    .navContainer {
+      padding: 10px 40px;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+}

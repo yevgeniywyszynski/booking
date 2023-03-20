@@ -1,0 +1,3 @@
+/hotels-server/settings*
+/hotels-server/node_modules
+/*/package-lock.json

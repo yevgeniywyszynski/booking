@@ -1,0 +1,96 @@
+.listContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  .listWrapper {
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    gap: 20px;
+    .listSearch {
+      flex: 1;
+      background-color: #febb02;
+      border-radius: 10px;
+      position: sticky;
+      padding: 10px;
+      top: 10px;
+      height: max-content;
+      .listSearchTitle {
+        font-size: 20px;
+        color: #555;
+        margin-bottom: 10px;
+      }
+      .listSearchItem {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-bottom: 10px;
+        .searchL {
+          font-size: 12px;
+          font-weight: 500;
+          line-height: 15px;
+        }
+        .listOption {
+          padding: 10px;
+          .listOptionItem {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            color: #555;
+            font-size: 12px;
+            .listOptionInput {
+              width: 50px;
+            }
+          }
+        }
+        .searchInputL {
+          height: 30px;
+          border: none;
+          padding: 5px;
+        }
+        .dataSearchInput {
+          height: 30px;
+          padding: 5px;
+          background-color: #fff;
+          font-size: 14px;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+        }
+      }
+      .lSearchBtn {
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        color: #fff;
+        font-weight: 500;
+        background-color: #0a3b95;
+        font-size: 12px;
+        width: 100%;
+        cursor: pointer;
+      }
+    }
+    .listResult {
+      flex: 3;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .listWrapper {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 767px) {
+  .listContainer {
+    margin-top: 0px;
+    .listWrapper {
+      flex-direction: column;
+      .listSearch {
+        position: static;
+        border-radius: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+.fProp {
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  .fpItem {
+    flex: 1;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    .fName {
+      font-weight: bold;
+    }
+    .fCity {
+      font-weight: 300;
+    }
+    .fPrice {
+      font-weight: 500;
+    }
+    .fpImg {
+      width: 100%;
+    }
+    .fpRating {
+      display: flex;
+      align-items: center;
+      .ratingBtn {
+        background-color: #013580;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        padding: 5px;
+        font-weight: 500;
+        margin-right: 10px;
+      }
+      .fRatindDesc {
+        font-size: 14px;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+/*MEDIA*/
+
+@media (max-width: 800px) {
+  .fProp {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
