@@ -4,10 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBed,
   faCalendarDays,
-  faCar,
   faPerson,
-  faPlane,
-  faTaxi,
   faCircleExclamation,
 } from "@fortawesome/free-solid-svg-icons";
 import "react-date-range/dist/styles.css"; // main css file calendar
@@ -20,6 +17,7 @@ import { updateOptions } from "../../redux/optionsSlice";
 import { getSearchHotel } from "../../redux/hotelsSlice";
 //import { getHotels } from "../../redux/hotelsSlice";
 import Calendar from "../Calendar/Calendar";
+import Menu from "../menu/Menu";
 
 export default function Header({ type }) {
   const navigate = useNavigate();
@@ -85,28 +83,8 @@ export default function Header({ type }) {
             : styles.headerContainer
         }
       >
-        <div className={styles.headerList}>
-          <div className={styles.headerListItem}>
-            <FontAwesomeIcon icon={faBed} />
-            <span className={styles.icon}>Stays</span>
-          </div>
-          <div className={styles.headerListItem}>
-            <FontAwesomeIcon icon={faPlane} />
-            <span className={styles.icon}>Flights</span>
-          </div>
-          <div className={styles.headerListItem}>
-            <FontAwesomeIcon icon={faCar} />
-            <span className={styles.icon}>Car rentals</span>
-          </div>
-          <div className={styles.headerListItem}>
-            <FontAwesomeIcon icon={faBed} />
-            <span className={styles.icon}>Attractions</span>
-          </div>
-          <div className={styles.headerListItem}>
-            <FontAwesomeIcon icon={faTaxi} />
-            <span className={styles.icon}>Airport taxis</span>
-          </div>
-        </div>
+        <Menu />
+
         {type !== "list" && (
           <>
             <h1 className={styles.headerTitle}>Where to next, Kowalski?</h1>

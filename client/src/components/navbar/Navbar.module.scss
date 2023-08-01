@@ -3,6 +3,7 @@
   background-color: #0a3b95;
   display: flex;
   justify-content: center;
+  border-bottom: 1px solid #fff;
   .navContainer {
     width: 100%;
     max-width: 1024px;
@@ -38,15 +39,21 @@
   .navContainer {
     padding: 20px 70px;
   }
-}
 
-@media (max-width: 500px) {
-  .navbar {
-    height: max-content;
-    .navContainer {
-      padding: 10px 40px;
-      flex-direction: column;
-      gap: 20px;
+  @media (max-width: 767px) {
+    .navbar {
+      display: none;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .navbar {
+      height: max-content;
+      .navContainer {
+        padding: 10px 40px;
+        flex-direction: column;
+        gap: 20px;
+      }
     }
   }
 }

@@ -9,6 +9,7 @@ import { getSearchHotel } from "../../redux/hotelsSlice";
 import { useDispatch } from "react-redux";
 import { updateOptions } from "../../redux/optionsSlice";
 import Calendar from "../../components/Calendar/Calendar";
+import { getHotels } from "../../redux/hotelsSlice";
 
 export default function List() {
   const dispatch = useDispatch();
@@ -27,8 +28,15 @@ export default function List() {
     }
   }, [destination]);
 
+  useEffect(() => {
+    if (!isLoading) {
+      if (!destination) {
+        dispatch(getHotels());
+      }
+    }
+  }, []);
+
   const optionsRedux = useSelector((state) => state.options.allOptions);
-  console.log("optionReduxWhere", optionsRedux);
   const hotelsList = useSelector((state) => state.hotels.all);
 
   return (

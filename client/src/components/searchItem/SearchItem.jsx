@@ -28,7 +28,6 @@ export default function Searchitem() {
     const { startDate, endDate } = searchOptions;
     let difTime = endDate - startDate;
     let dayDif = Math.floor(difTime / (1000 * 60 * 60 * 24)) + 1;
-    console.log("dayDif", dayDif);
     let totalPrice = dayDif * pricePerOneNight;
     return totalPrice;
   };
