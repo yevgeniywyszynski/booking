@@ -10,6 +10,7 @@ import { useDispatch } from "react-redux";
 import { updateOptions } from "../../redux/optionsSlice";
 import Calendar from "../../components/Calendar/Calendar";
 import { getHotels } from "../../redux/hotelsSlice";
+import ListSearchOptions from "../../components/listSearchOptions/ListSearchOptions";
 
 export default function List() {
   const dispatch = useDispatch();
@@ -67,58 +68,7 @@ export default function List() {
               )}`}</span>
               {openDate && <Calendar className={styles.date} />}
             </div>
-            <div className={styles.listSearchItem}>
-              <label className={styles.searchL}>Options</label>
-              <div className={styles.listOption}>
-                <div className={styles.listOptionItem}>
-                  <span className={styles.listOptionText}>
-                    Min price per night
-                  </span>
-                  <input
-                    type="number"
-                    min={1}
-                    className={styles.listOptionInput}
-                  />
-                </div>
-                <div className={styles.listOptionItem}>
-                  <span className={styles.listOptionText}>
-                    Max price per night
-                  </span>
-                  <input
-                    min={1}
-                    type="number"
-                    className={styles.listOptionInput}
-                  />
-                </div>
-                <div className={styles.listOptionItem}>
-                  <span className={styles.listOptionText}>Adults</span>
-                  <input
-                    min={1}
-                    type="number"
-                    className={styles.listOptionInput}
-                    placeholder={optionsRedux.adults}
-                  />
-                </div>
-                <div className={styles.listOptionItem}>
-                  <span className={styles.listOptionText}>Children</span>
-                  <input
-                    min={0}
-                    type="number"
-                    className={styles.listOptionInput}
-                    placeholder={optionsRedux.children}
-                  />
-                </div>
-                <div className={styles.listOptionItem}>
-                  <span className={styles.listOptionText}>Room</span>
-                  <input
-                    min={1}
-                    type="number"
-                    className={styles.listOptionInput}
-                    placeholder={optionsRedux.room}
-                  />
-                </div>
-              </div>
-            </div>
+            <ListSearchOptions />
             <button
               onClick={() => dispatch(getSearchHotel(optionsRedux.where))}
               className={styles.lSearchBtn}
